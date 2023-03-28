@@ -1,12 +1,13 @@
 Summary:	Small collection of programs that use libsndfile and other libraries
 Summary(pl.UTF-8):	Mały zestaw programów wykorzystujących libsndfile i inne biblioteki
 Name:		sndfile-tools
-Version:	1.04
+Version:	1.5
 Release:	1
 License:	GPL v2 or GPL v3
 Group:		Applications/Sound
-Source0:	http://www.mega-nerd.com/libsndfile/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	711fce7bb51a2d8b95fac4c63327bf4c
+#Source0Download: https://github.com/libsndfile/sndfile-tools/releases
+Source0:	https://github.com/libsndfile/sndfile-tools/releases/download/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	26dc615302b65aee3ace917be192d30a
 URL:		http://www.mega-nerd.com/libsndfile/tools/
 BuildRequires:	cairo-devel >= 1.4.0
 BuildRequires:	fftw3-devel >= 0.15.0
@@ -21,6 +22,8 @@ Requires:	fftw3 >= 0.15.0
 Requires:	jack-audio-connection-kit-libs >= 0.100
 Requires:	libsamplerate >= 0.1.5
 Requires:	libsndfile >= 1.0.19
+Provides:	libsamplerate-tools
+Obsoletes:	libsamplerate-tools < 0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
